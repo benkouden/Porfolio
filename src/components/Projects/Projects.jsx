@@ -3,8 +3,8 @@ import React from 'react'
 import {motion } from 'framer-motion';
 import Image from 'next/image';
 import Project1 from "../../assets/shopsy.jpg";
-import Project2 from "../../assets/market.png";
-import Project3 from "../../assets/volta.png";
+import Project2 from "../../assets/market.PNG";
+import Project3 from "../../assets/volta.PNG";
 import Link from 'next/link'
 
 
