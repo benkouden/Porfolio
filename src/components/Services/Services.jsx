@@ -78,7 +78,7 @@ const Services = () => {
                         <div className='flex items-center gap-4'>
                             <motion.button variants={slideUp(0.7)} initial="initial" animate="animate" className=' text-primary rounded font-bold px-5  !bg-white text-xs py-3 md:text-base hover:red-shadow'>Know more</motion.button>
                            
-                            <a href="https://drive.google.com/file/d/1E7kGLBuWN_EeMWZKUPH8wN0NLCta3W9R/view?usp=drive_link">
+                            <a href="https://drive.google.com/file/d/1-6DPR4MZiLQLdmBrG627AGX4wriXH162/view?usp=drive_link">
                             <motion.button variants={slideUp(0.9)} initial="initial" animate="animate" className='border border-white/50 rounded-lg px-4  text-xs md:text-base flex items-center gap-2 py-3  '>
                                 <FiDownload/>
                                 Download CV

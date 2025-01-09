@@ -28,7 +28,7 @@ const Banner = () => {
                     <motion.p variants={slideUp(0.5)} initial="initial" animate="animate" className='text-white/70'>Passionné et polyvalent, capable de maîtriser aussi bien le front-end que le back-end pour concevoir des applications web complètes et performantes. Mon engagement : créer des solutions intuitives, robustes et parfaitement adaptées aux besoins des utilisateurs. Mon ambition est de donner vie à vos idées en les transformant en produits numériques innovants et impactants.</motion.p>
                     <div className='flex items-center gap-4'>
                         <motion.button variants={slideUp(0.7)} initial="initial" animate="animate" className='btn text-xs py-3 md:text-base'>Know more</motion.button>
-                        <a href="https://drive.google.com/file/d/1E7kGLBuWN_EeMWZKUPH8wN0NLCta3W9R/view?usp=drive_link">
+                        <a href="https://drive.google.com/file/d/1-6DPR4MZiLQLdmBrG627AGX4wriXH162/view?usp=drive_link">
                         <motion.button variants={slideUp(0.9)} initial="initial" animate="animate" className='border border-white/50 rounded-lg px-4  text-xs md:text-base flex items-center gap-2 py-3  '>
                             <FiDownload/>
                             Download CV
