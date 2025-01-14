@@ -4,8 +4,7 @@ import { usePathname } from 'next/navigation';
 import { MdMenu } from "react-icons/md";
 import ResponsiveMenu from './ResponsiveMenu';
 import { motion } from 'framer-motion';
-import Link from 'next/link'
-
+import Link from 'next/link';
 
 export const NavLinks = [
     { id: 1, title: "Home", link : "/" },
@@ -21,7 +20,6 @@ const Navbar = () => {
   // Fermer le menu si un clic est fait en dehors
   useEffect(() => {
     const handleClickOutside = (e) => {
-      // Vérifier si le clic se fait en dehors du menu
       if (showMenu && !e.target.closest('.menu-container')) {
         setShowMenu(false);
       }
@@ -40,8 +38,13 @@ const Navbar = () => {
   };
 
   return (
-    <motion.nav className="bg-black text-white" initial={{opacity: 0}} animate={{opacity: 1}} transition={{duration: 0.5}}>
-      <div className="container flex items-center justify-between py-5 relative z-[9999]">
+    <motion.nav 
+      className="bg-black text-white fixed top-0 w-full z-[9999]" 
+      initial={{ opacity: 0 }} 
+      animate={{ opacity: 1 }} 
+      transition={{ duration: 0.5 }}
+    >
+      <div className="container flex items-center justify-between py-5 relative">
         {/* Logo section */}
         <div>
           <Link href="/">

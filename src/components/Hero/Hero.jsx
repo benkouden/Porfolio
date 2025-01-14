@@ -33,7 +33,7 @@ export const slideUp = (delay) =>{
 
 const Hero = () => {
   return (
-    <section style={wallBackground} className="bg-black text-white">
+    <section style={wallBackground} className="bg-black text-white mt-20">
       <div className="bg-gradient-to-b from-primary/50 to-black">
         <div className="container grid grid-cols-1 md:grid-cols-2 min-h-[650px]">
           {/* brand info */}

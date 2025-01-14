@@ -1,14 +1,20 @@
 "use client"
-import React from 'react'
-import {motion } from 'framer-motion';
+import React from 'react';
+import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Project1 from "../../assets/shopsy.jpg";
 import Project2 from "../../assets/market.PNG";
 import Project3 from "../../assets/volta.PNG";
-import Link from 'next/link'
+import Project4 from "../../assets/Hope.PNG";
+import Project5 from "../../assets/Resto.PNG";
 
 
+import Link from 'next/link';
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick-theme.css";
 
+// Données des projets
 const ProjetsData = [
     {
         id:1,
@@ -44,49 +50,95 @@ const ProjetsData = [
 
         
     },
+    {
+        id:4,
+        title :"Project 4",
+        link: "#",
+        desc : "Ce portfolio professionnel présente les services et compétences en rédaction web, SEO, et création de contenus digitaux. Il offre une interface moderne et réactive avec une navigation fluide, mettant en valeur les projets réalisés. Conçu pour illustrer l’expertise en production de contenus optimisés et renforcer la visibilité en ligne.",
+        delay : 2,
+        img : Project4,
+        lien1:"https://hope-portfolio.onrender.com/",
+        lien2:"https://github.com/benkouden"
+
+        
+    },
+    {
+        id:5,
+        title :"Project 5",
+        link: "#",
+        desc : "Restaurant Gallery est un site web moderne pour un restaurant, offrant une expérience utilisateur fluide et attrayante. Il présente des sections clés : menu, galerie de plats et témoignages .Soigné avec Reactjs et Tailwind CSS, optimisé pour mobile et desktop, facilitant les réservations en ligne et améliorant la visibilité du restaurant.",
+        delay : 2,
+        img : Project5,
+        lien1:"https://hope-portfolio.onrender.com/",
+        lien2:"https://github.com/benkouden"
+
+        
+    },
 ]
 
-const Projects = () => {
-  return (
-    <section className=' bg-black text-white'>
-        <div className="container py-20 xl:py-36 space-y-36 ">
-           {/* heading title  */}
-           <motion.div initial={{ opacity: 0, scale:0.5}} whileInView= {{ opacity:1, scale:1}} transition={{ duration : 0.6, delay: 0.5}} className='relative'>
-            <p className='text-3xl lg:text-4xl tracking-widest font-bold text-center uppercase relative z-20'>Projects</p>
-            <p className='text-5xl lg:text-8xl text-white/10 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10 uppercase font-extrabold'>Projects</p>
-           </motion.div>
-           {/* projects card section  */}
-           <motion.div initial={{ opacity: 0}} whileInView= {{ opacity:1}} transition={{ duration : 0.8, delay: 0.5}} className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5'>
-            {
-                ProjetsData.map((project) => {
-                    return (
-                        <motion.div 
-                            key={project.id} // Ajout de la clé unique
-                            className=" bg-black hover:red-shadow border-2 border-primary/80 p-4 rounded-xl hover:scale-110 duration-300 group space-y-5 ">
-                            <Image className='w-full' src={project.img} alt={project.title} />
-                            <div className=' space-y-2 p-4'>
-                                <h1>{project.title} </h1>
-                                <p className=' text-sm line-clamp-3'>{project.desc}</p>
-                            </div>
-                            {/* hidden button section  */}
-                            <div className=' hidden group-hover:flex justify-around items-center duration-300'>
-                                <Link href={project.lien1}>
-                                   <button className='border-2 border-white py-2 rounded-lg px-4'>Live</button>
-                                </Link>
-                                <Link href={project.lien1}>
-                                   <button className='btn'>Voir le Code</button>
-                                </Link>
-                            </div>
-                           
-                        </motion.div>
-                        
-                    );
-                })
+
+// Configuration du slider avec autoplay activé
+const sliderSettings = {
+    dots: true,
+    infinite: false,
+    speed: 500,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    autoplay: true, // Permet le défilement automatique
+    autoplaySpeed: 3000, // Délai entre chaque défilement (en millisecondes)
+    responsive: [
+        {
+            breakpoint: 768, // Pour les mobiles
+            settings: {
+                slidesToShow: 1,
             }
-           </motion.div>
-        </div>
-    </section>
-  )
+        }
+    ]
+};
+
+const Projects = () => {
+    return (
+        <section className='bg-black text-white'>
+            <div className="container py-20 xl:py-36 space-y-36">
+                {/* Titre */}
+                <motion.div 
+                    initial={{ opacity: 0, scale: 0.5 }} 
+                    whileInView={{ opacity: 1, scale: 1 }} 
+                    transition={{ duration: 0.6, delay: 0.5 }} 
+                    className='relative text-center'>
+                    <p className='text-3xl lg:text-4xl tracking-widest font-bold uppercase z-20'>Projects</p>
+                    <p className='text-5xl lg:text-8xl text-white/10 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10 font-extrabold'>Projects</p>
+                </motion.div>
+
+                {/* Section slider */}
+                <Slider {...sliderSettings}>
+                    {ProjetsData.map((project) => (
+                        <motion.div 
+                            key={project.id} 
+                            whileHover={{ scale: 1.05 }} // Ombre au survol
+                            className="p-6 group"
+                        >
+                            <div className="bg-black hover:red-shadow border-2 border-primary/80 p-4 rounded-xl space-y-5 transition-all duration-300 transform">
+                                <Image className='w-full object-cover rounded' src={project.img} alt={project.title} />
+                                <div className='space-y-2 p-4'>
+                                    <h1 className="text-lg font-bold">{project.title}</h1>
+                                    <p className='text-sm line-clamp-5'>{project.desc}</p>
+                                </div>
+                                <div className='hidden group-hover:flex justify-around items-center duration-300'>
+                                    <Link href={project.lien1}>
+                                        <button className='border-2 border-white py-2 rounded-lg px-4'>Live</button>
+                                    </Link>
+                                    <Link href={project.lien2}>
+                                        <button className='btn'>Voir le Code</button>
+                                    </Link>
+                                </div>
+                            </div>
+                        </motion.div>
+                    ))}
+                </Slider>
+            </div>
+        </section>
+    );
 }
 
-export default Projects
+export default Projects;
