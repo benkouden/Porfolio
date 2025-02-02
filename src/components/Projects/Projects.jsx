@@ -7,6 +7,8 @@ import Project2 from "../../assets/market.PNG";
 import Project3 from "../../assets/volta.PNG";
 import Project4 from "../../assets/Hope.PNG";
 import Project5 from "../../assets/Resto.PNG";
+import Project6 from "../../assets/food1.PNG";
+
 
 
 import Link from 'next/link';
@@ -70,6 +72,18 @@ const ProjetsData = [
         delay : 2,
         img : Project5,
         lien1:"https://hope-portfolio.onrender.com/",
+        lien2:"https://github.com/benkouden"
+
+        
+    },
+    {
+        id:6,
+        title :"Project 6",
+        link: "#",
+        desc : "Food est un site web moderne pour un restaurant, offrant une expérience utilisateur fluide et attrayante. Il présente des sections clés : menu, galerie de plats et témoignages .Soigné avec Reactjs et Tailwind CSS, optimisé pour mobile et desktop, facilitant les réservations en ligne et améliorant la visibilité du restaurant.",
+        delay : 2,
+        img : Project6,
+        lien1:"https://dev-ben-food.pantheonsite.io/",
         lien2:"https://github.com/benkouden"
 
         
